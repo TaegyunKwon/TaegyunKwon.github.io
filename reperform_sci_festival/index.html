@@ -24,105 +24,109 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#데모">데모</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#설명">설명</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#demo">데모</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#algorithm">알고리즘</a></li>
                     </ul>
                 </div>
             </div>
-        </nav모
+        </nav>
+
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
                 <div class="masthead-heading text-uppercase" style="font-size: 50px">
-                AI:UM 2020 피아노 연주 자동 채보 & 연주 재현</div>
+                AI:UM 2020 피아노 연주 자동 채보 & 연주 재현 
+                </div>
+                <div class="masthead-subheading" style="font-size: 50px">
+                    <a href="https://mac.kaist.ac.kr/index.html">MACLAB KAIST </a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="masthead-subheading">
+                            <a> 권태균, 정다샘, 남주한</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </header>
         
         <!-- 데모-->
-        <section class="page-section bg-light" id="데모">
+        <section class="page-section bg-light" id="demo">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase"></h2>
-    <iframe width="720" height="400" style="display:block; margin:0 auto;" src="https://www.youtube.com/embed/hhS2kGNtnCM">
+                    <h2 class="section-heading text-uppercase">데모 영상</h2>
+                        <p align="left" style="font-size:20px;"> 
+                            아래의 영상들은 유튜브 연주 영상을 딥러닝을 사용한 알고리즘을 통해 자동으로 채보(연주된 음표를 추측) 하고
+                            각 음표의 세기, 페달을 밟고 떼는 위치를 추정하여 자동 연주 피아노를 통해 재현한 영상입니다.
+                            실제 연주 영상와 맞추어 재현된 연주를 함께 재생해서 연주가 얼마나 자연스럽게 재현되고 있는지 확인 할 수 있습니다.
+                        </p>
+                    
+    <iframe width="720" height="400" style="display:block; margin:0 auto;" src="https://www.youtube.com/embed/pBqBArcXRto">
     </iframe>
-                </div>
-            </div>
-
-
-            <div class="container">
-                <div class="text-center">
-                    <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">Abstract</h3>
-                    <p align="left" style="font-size:20px;margin-top:-50px;"> Music similarity search is useful for a variety of creative tasks such as replacing one music recording with another recording with a similar “feel”, a common task in video editing. For this task, it is typically necessary to define a similarity metric to compare one recording to another. Music similarity, however, is hard to define and depends on multiple simultaneous notions of similarity (i.e. genre, mood, instrument, tempo). While prior work ignore this issue, we embrace this idea and introduce the concept of multidimensional similarity and unify both global and specialized similarity metrics into a single, semantically disentangled multidimensional similarity metric.</p>
-                    <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">Read the Full Paper &nbsp;
-                    <a href="https://ieeexplore.ieee.org/document/9053442" target="_blank">(ICASSP)</a>
-                    <a href="https://arxiv.org/abs/2008.03720" target="_blank">(arXiv)</a>
-                    </h3>
-                    <h3 class="section-subheading" align="center">
-                    <a href="https://arxiv.org/abs/2008.03720" target="_blank">
-                    <img src="assets/img/icassp_preview.png" alt='arXiv link' height='350'>
-                    </a>
-                    </h3>
+                    <p align='center'> 조성진: Chopin Scherzo in B flat minor Op. 31</p>
+    <iframe width="720" height="400" style="display:block; margin:0 auto;" src="https://www.youtube.com/embed/fxt_C2gZYjE">
+    </iframe>
+                    <p align='center'> 김광민, 이루마: 학교가는 길</p>
+    <iframe width="720" height="400" style="display:block; margin:0 auto;" src="https://www.youtube.com/embed/XJ47l2ZlbBA">
+    </iframe>
+                    <p align='center'> 손열음: Liszt La Campanella</p>
                 </div>
             </div>
         </section>
 
 
-        <!-- 데모 -->
-        <section class="page-section" id="데모">
+        <!-- 알고리즘 -->
+        <section class="page-section" id="algorithm">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Dim-Sim Dataset</h2>
+                    <h2 class="section-heading text-uppercase">알고리즘</h2>
 
-                    <img src="assets/img/dim-sim.png" alt='dim-sim' height='400'>
+                    <video height='400', controls>
+                        <source src="assets/mov/spectrogram_crop.mp4" alt='Your browser does not support the video tag.' type="video/mp4">
+                    </video> 
+                    <p align='center'>조성진 Scherzo 연주 일부의 스펙트로그램. Generated using <a href=https://musiclab.chromeexperiments.com/Spectrogram/> Chrome musiclab </a></p>
 
-                    <p align="left" style="font-size:20px;margin-top:30px;">The <strong>dim-sim</strong> dataset is a collection of user-annotated music similarity triplet ratings used to evaluate music similarity search and related algorithms. Our similarity ratings are linked to the <a href="http://millionsongdataset.com", target="_blank">Million Song Dataset (MSD)</a>.</p>
+                    <p align="left" style="font-size:20px;margin-top:30px;">
+                        우리가 듣는 모든 음악, 모든 소리는 공기의 떨림입니다. 빠르게 떨리는 소리는 높은소리, 느리게 떨리는 소리는 낮은 소리로 인식되며 
+                        스펙트로그램을 통해 소리의 주파수 별 성분을 보면, 어떤 소리가 나는지 대략적으로 알 수 있습니다.
+                        예를들어, 위에 있는 스펙트로그램을 보면 소리를 듣지 않아도 낮은 두번의 음들이 나오고, 조금씩 올라가는 높은 음들이 크게 나올 것이라는 것을 알 수 있습니다. 
+                    </p>    
 
-                    <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">About</h3>
-                    <p align="left" style="font-size:20px;margin-top:-50px;">To collect our data, we randomly sampled 4,000 3-second triplets (i.e., anchor, song 1, song 2) from the <a href="http://millionsongdataset.com", target="_blank">MSD</a> and asked people to annotate which track sounded more similar to the anchor (i.e., song 1 or song 2). Each triplet was annotated by 5-12 people, resulting in 39,440 raw human annotations. We then calculated the annotator agreement per triplet, defined as the ratio between the majority vote and total number of annotations, and filtered out triplets where the agreement was below 0.9, to create 879 high-agreement cleaned, human-annotated triplets. We have released both the raw and clean versions of the dataset in multiple formats discussed below.</p>
+                    <p align="left" style="font-size:20px;margin-top:30px;">
+                        하지만 실제로 우리가 듣는 것들은 더 복잡합니다. 위 짧은 영상에서도 많은 음표가 울리고 있고,
+                        만약 숙련된 음악가라면 어떤음을 쳤는지, 얼마나 세게, 얼마나 짧게 쳤는지와 같은 것들을 들을 수 있을것입니다.
+                        위에서 연주된 정확한 음들을 피아노 건반을 따라 표시하면 아래와 같이 됩니다 (색깔은 세기를 나타냅니다)
+                    </p>    
 
+                    <img src="assets/img/piano_roll.png", height="400">
+                    <p align='center'>조성진 Scherzo 연주 일부의 피아노 롤</p>
 
-                    <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">Download</h3>
-                    <p align="left" style="font-size:20px;margin-top:-50px;">The dataset can be downloaded from the zenodo link: <a href="https://zenodo.org/record/3889149#.XuovcxMzbyV", target="_blank", style="color:#0066CC">https://zenodo.org/record/3889149#.XuovcxMzbyV</a>.</p>
+                    <p align="left" style="font-size:20px;margin-top:30px;">
+                        우리는 딥러닝을 이용해서 위의 스펙트로그램으로 부터 연주된 음표들을 구별해내는 알고리즘을 학습시켰습니다.
+                        연주된 음표의 음고, 세기, 길이를 정확히 예측한다면 이 피아노 롤을 다시 피아노를 통해 연주하면 원래 연주와 아주 유사한 연주를 재현 할 수 있게 됩니다.
+                        위의 데모들은, 이렇게 예측된 피아노 롤에 페달을 추가로 예측하여 자동연주 피아노를 통해 재현한 영상들 입니다.
+                        자세한 알고리즘은 아래의 논문을 참조해 주세요.
+                    </p>    
 
-
-
-                    <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">Formats</h3>
-                    <p align="left" style="font-size:20px;margin-top:-50px;">We have released both <a href="https://en.wikipedia.org/wiki/Comma-separated_values", target="_blank">CSV</a> and <a href="https://www.json.org", target="_blank">JSON</a> versions of the data for both the raw (<code>raw-dim-sim</code>) and clean (<code>clean-dim-sim</code>) annotations as described above. For a given triplet rating, the following data is provided:</p>
-                    <pre align="left" style="font-size:15px;"><code><span class="hljs-attribute">triplet_id</span>    
-                    anchor_id    
-                    anchor_start_seconds    
-                    anchor_start_samples    
-                    song1_id    
-                    song1_start_seconds    
-                    song1_start_samples    
-                    song2_id    
-                    song2_start_seconds    
-                    song2_start_samples    
-                    sampling_rate    
-                    clip_lengths_seconds    
-                    clip_lengths_samples    
-                    song1_vote    
-                    song2_vote
-                    </code></pre>
-                    <p align="left" style="font-size:20px;">For the raw versions, <code>song1_vote</code> and <code>song2_vote</code> correspond to the total number of users that voted for the each song respectively. For the clean versions, the values of <code>song1_vote</code> and <code>song2_vote</code> are set to 0 or 1. All clips used were exactly 3 seconds long. The <code>triplet_id</code>, <code>song1_id</code>, and <code>song2_id</code> denote the corresponding MSD track ID.</p>
-
-                    <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">License</h3>
-                    <p align="left" style="font-size:20px;margin-top:-50px;">The <strong>dim-sim</strong> dataset is licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/", target="_blank">Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)</a>.</p>
+                    <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">Future</h3>
+                    <p align="left" style="font-size:20px;margin-top:-50px;">
+                        연주 정보를 담은 피아노 롤은 연주를 재연하는 데 쓰이는 것 뿐 아니라 연주자가 구체적으로 어떻게 연주를 했는지
+                        분석할 수 있게 해줍니다. 연주 정보를 모아 좋은 연주를 구성하는 요소는 무엇인지, 연주의 스타일이란 어떻게
+                        구성되는지 실마리를 찾는 작업이 다음 단계이며, 궁극적으로는 음악 연주에서 발휘되는 인간의 창의성을 이해하고
+                        인간과 인공지능이 함께 연주할 수 있는 미래를 향하고 있습니다.
+                    </p>
 
                     <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">Acknowledgement</h3>
-                    <p align="left" style="font-size:20px;margin-top:-50px;">When <strong>dim-sim</strong> is used for academic research, we would highly appreciate it if scientific publications of works partly based on the <strong>dim-sim</strong> dataset cite the following publication:</p>
+                    <p align="left" style="font-size:20px;margin-top:-50px;">
+                        이 연구는 삼성전자 미래기술육성센터의 ICT 창의과제 지원을 받아 이루어졌습니다. (SRFC-IT1702-12)
+                    </p>
 
-
-                    <pre align="left" style="font-size:13px;"><code>@inproceedings{Lee2019MusicSimilarity,
-                     title={<span class="hljs-keyword">Disentangled </span><span class="hljs-keyword">Multidimensional </span>Metric Learning For Music Similarity},
-                     author={Lee, <span class="hljs-keyword">Jongpil </span><span class="hljs-keyword">and </span><span class="hljs-keyword">Bryan, </span>Nicholas <span class="hljs-keyword">J. </span><span class="hljs-keyword">and </span>Salamon, <span class="hljs-keyword">Justin </span><span class="hljs-keyword">and </span><span class="hljs-keyword">Jin, </span>Zeyu, <span class="hljs-keyword">and </span>Nam, <span class="hljs-keyword">Juhan},
-                    </span> <span class="hljs-keyword">booktitle={Proceedings </span>of the International Conference on Acoustics, Speech <span class="hljs-keyword">and </span>Signal Processing (ICASSP)},
-                     year={<span class="hljs-number">2020</span>},
-                     <span class="hljs-keyword">organization={IEEE}
-                    </span>}
-                    </code></pre>
-
-
+                    <p align="left" style="font-size:20px;">
+                        과학적 출판에 인용하는 경우에는 ISMIR 2020에 출판될 "POLYPHONIC PIANO TRANSCRIPTION USING AUTOREGRESSIVEMULTI-STATE NOTE MODEL" 
+                        논문을 인용해주시면 감사하겠습니다. (링크 추가 예정)
+                    </p>
                 </div>
             </div>
         </section>
