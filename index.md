@@ -12,11 +12,9 @@ Hi, I'm Taegyun Kwon. I'm Ph.D student @ [Music and Audio Computing lab](https:/
 Comming soon!
 
 ## Research Projects
-- **Polyphonic Piano Transcription Using Autoregressive Multi-State Note Model**
-
-Dasaem Jeong, Taegyun Kwon, and Juhan Nam
-
-*Proceedings of the 21st International Society for Music Information Retrieval Conference (ISMIR), 2020*  
+- **Polyphonic Piano Transcription Using Autoregressive Multi-State Note Model**  
+Dasaem Jeong, Taegyun Kwon, and Juhan Nam  
+*Proceedings of the 21st International Society for Music Information Retrieval Conference (ISMIR), 2020*
 [\[Pdf\]]() [\[Project Page\]](https://TaegyunKwon.github.io/ar_multi_transcription) [\[AI:UM Demo(Korean)\]](https://TaegyunKwon.github.io/reperform_sci_festival)
 
 - **Note Intensity Estimation of Piano Recordings Using Coarsely-aligned MIDI Score**  
