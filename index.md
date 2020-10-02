@@ -1,6 +1,6 @@
 # Taegyun Kwon's homepage
 
-<img src="images/profile.jpg" align="left" alt="drawing" width="400" style="vertical-align:middle;margin:0px 50px"/>
+<img src="images/profile.jpg" align="left" alt="drawing" width="200" style="vertical-align:middle;margin:0px 50px"/>
 - Publications and Talks [\[Google Scholar\]](https://scholar.google.co.kr/citations?user=sdn17xwAAAAJ&hl)
 - [Curriculum Vitae](cv/TGK_Resume.pdf)
 - [Github](https://github.com/TaegyunKwon)
@@ -20,4 +20,4 @@ Dasaem Jeong, Taegyun Kwon, and Juhan Nam
 - **Note Intensity Estimation of Piano Recordings Using Coarsely-aligned MIDI Score**  
 Dasaem Jeong, Taegyun Kwon, and Juhan Nam  
 *Proceedings of the 14th Sound and Music Computing Conference (SMC), 2017*
-[Pdf](https://arxiv.org/pdf/1711.04480) [Demo](https://mac.kaist.ac.kr/~ilcobo2/alignWithAMT/)
+[\[pdf\]](https://arxiv.org/pdf/1711.04480) [\[Demo\]](https://mac.kaist.ac.kr/~ilcobo2/alignWithAMT/)
