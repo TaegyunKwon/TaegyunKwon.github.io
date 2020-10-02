@@ -1,37 +1,21 @@
-## Welcome to GitHub Pages
+# Taegyun Kwon's homepage
 
-You can use the [editor on GitHub](https://github.com/TaegyunKwon/TaegyunKwon.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+![profile](images/profile.jpg)
+- Publications and Talks[Google Scholar](https://scholar.google.co.kr/citations?user=sdn17xwAAAAJ&hl=ko | width=100)
+- [Curriculum Vitae](cv/TGK_Resume.pdf)
+- [Github](https://github.com/TaegyunKwon)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
+Hi, I'm Taegyun Kwon. I'm Ph.D student @ [Music and Audio Computing lab](https://mac.kaist.ac.kr). I'm a music information retrieval researcher, an amature pianist and a treveler.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Blog
+Comming soon!
 
-```markdown
-Syntax highlighted code block
+## Research Projects
+- **Polyphonic Piano Transcription Using Autoregressive Multi-State Note Model**
+Dasaem Jeong, Taegyun Kwon, and Juhan Nam
+*Proceedings of the 21st International Society for Music Information Retrieval Conference (ISMIR), 2020*[Pdf]()[Project Page]()[AI:UM Demo(Korean)](https://TaegyunKwon.github.io/reperform_sci_festival)
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/TaegyunKwon/TaegyunKwon.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+- **Note Intensity Estimation of Piano Recordings Using Coarsely-aligned MIDI Score**
+Dasaem Jeong, Taegyun Kwon, and Juhan Nam
+*\textit{*Proceedings of the 14th Sound and Music Computing Conference (SMC), 2017*[Pdf](https://arxiv.org/pdf/1711.04480)[Demo](https://mac.kaist.ac.kr/~ilcobo2/alignWithAMT/)
