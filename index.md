@@ -16,14 +16,10 @@ Comming soon!
 
 Dasaem Jeong, Taegyun Kwon, and Juhan Nam
 
-*Proceedings of the 21st International Society for Music Information Retrieval Conference (ISMIR), 2020*
+*Proceedings of the 21st International Society for Music Information Retrieval Conference (ISMIR), 2020*  
+[\[Pdf\]]() [\[Project Page\]](https://TaegyunKwon.github.io/ar_multi_transcription) [\[AI:UM Demo(Korean)\]](https://TaegyunKwon.github.io/reperform_sci_festival)
 
-[Pdf]() [Project Page](https://TaegyunKwon.github.io/ar_multi_transcription) [AI:UM Demo(Korean)](https://TaegyunKwon.github.io/reperform_sci_festival)
-
-- **Note Intensity Estimation of Piano Recordings Using Coarsely-aligned MIDI Score**
-
-Dasaem Jeong, Taegyun Kwon, and Juhan Nam
-
+- **Note Intensity Estimation of Piano Recordings Using Coarsely-aligned MIDI Score**  
+Dasaem Jeong, Taegyun Kwon, and Juhan Nam  
 *Proceedings of the 14th Sound and Music Computing Conference (SMC), 2017*
-
-[Pdf](https://arxiv.org/pdf/1711.04480) [Demo](https://mac.kaist.ac.kr/~ilcobo2/alignWithAMT/)
+[\[Pdf\]](https://arxiv.org/pdf/1711.04480) [\[Demo\]](https://mac.kaist.ac.kr/~ilcobo2/alignWithAMT/)
