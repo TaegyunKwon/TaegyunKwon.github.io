@@ -1,6 +1,6 @@
 # Taegyun Kwon's homepage
 
-<img src="images/profile.jpg" align="left" alt="drawing" width="200" />
+<img src="images/profile.jpg" align="left" alt="drawing" width="400" style="vertical-align:middle;margin:0px 50px"/>
 - Publications and Talks [\[Google Scholar\]](https://scholar.google.co.kr/citations?user=sdn17xwAAAAJ&hl)
 - [Curriculum Vitae](cv/TGK_Resume.pdf)
 - [Github](https://github.com/TaegyunKwon)
