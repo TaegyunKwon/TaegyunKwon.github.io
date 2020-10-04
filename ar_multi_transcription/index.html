@@ -20,7 +20,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand js-scroll-trigger" href="#page-top">Polyphonic Piano Transcription Using Autoregressive Multi-State Note Model</a>
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">ISMIR 2020 Project Page</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
@@ -34,56 +34,82 @@
         <!-- Masthead-->
         <header class="masthead">
             <div class="container">
-                <div class="masthead-heading text-uppercase" style="font-size: 50px">
-                Polyphonic Piano Transcription Using Autoregressive Multi-State Note Model
-                </div>
-                <div class="masthead-subheading" style="font-size: 50px">
-                    <a href="https://mac.kaist.ac.kr/index.html">MACLAB KAIST </a>
-                </div>
-            </div>
-            <div class="container">
                 <div class="row">
                     <div class="col">
-                        <div class="masthead-subheading">
+                        <div class="masthead-heading" style="font-size: 40px; color:#fd7e14;">
+                            Polyphonic Piano Transcription Using Autoregressive Multi-State Note Model
+                        </div>
+                        <div class="masthead-subheading" style="font-size: 2.0rem;">
                             <a> Taegyun Kwon, Dasaem Jeong and Juhan Nam</a>
+                        </div>
+                        <div class="masthead-subheading" style="font-style:normal;">
+                            <a> Graduate School of Culture Technology, KAIST, South Korea</a>
+                        </div>
+                        <div class="masthead-subheading" style="font-style:normal; font-size: 1.2rem;">
+                            <a> International Society for Music Information Retrieval Conference (ISMIR), 2020</a>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
 
+
         <!-- Abstract -->
         <section class="page-section bg-light" id="Abstract">
-            Abstract
-        </section>
-        
-        <!-- Demo -->
-        <section class="page-section bg-light" id="demo">
             <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Demo</h2>
-                        <p align="left" style="font-size:20px;"> 
-                            아래의 영상들은 유튜브 연주 영상을 딥러닝을 사용한 알고리즘을 통해 자동으로 채보(연주된 음표를 추측) 하고
-                            각 음표의 세기, 페달을 밟고 떼는 위치를 추정하여 자동 연주 피아노를 통해 재현한 영상입니다.
-                            실제 연주 영상와 맞추어 재현된 연주를 함께 재생해서 연주가 얼마나 자연스럽게 재현되고 있는지 확인 할 수 있습니다.
-                        </p>
-                    
-    <iframe width="720" height="400" style="display:block; margin:0 auto;" src="https://www.youtube.com/embed/pBqBArcXRto">
-    </iframe>
-                    <p align='center'> 조성진: Chopin Scherzo in B flat minor Op. 31</p>
-    <iframe width="720" height="400" style="display:block; margin:0 auto;" src="https://www.youtube.com/embed/fxt_C2gZYjE">
-    </iframe>
-                    <p align='center'> 김광민, 이루마: 학교가는 길</p>
-    <iframe width="720" height="400" style="display:block; margin:0 auto;" src="https://www.youtube.com/embed/XJ47l2ZlbBA">
-    </iframe>
-                    <p align='center'> 손열음: Liszt La Campanella</p>
+                <div class="text-left">
+                    <h2 class="section-heading text-uppercase">Abstract</h2>
+                    <div class="body">
+                        Recent  advances  in  polyphonic  piano  transcription  have been made primarily by a deliberate design of neural network architectures that detect different note states such as onset or sustain and model the temporal evolution of the states. The majority of them, however, use separate neural networks for each note state, thereby optimizing multipleloss functions, and also they handle the temporal evolution of note states by abstract connections between the state-wise neural networks or using a post-processing module. In this paper, we propose a unified neural network architecture where multiple note states are predicted as a softmax output with a single loss function and the temporal order  is  learned  by  an  auto-regressive  connection  within the single neural network. This compact model allows to increase note states without architectural complexity. Using the MAESTRO dataset, we examine various combinations of multiple note states including on, onset, sustain, re-onset, offset, and off. We also show that the autoregressive module effectively learns inter-state dependency of notes. Finally, we show that our proposed model achieves performance comparable to state-of-the-arts with fewer parameters.
+                    </div>
                 </div>
             </div>
         </section>
 
+        <!-- Demo -->
+        <section class="page-section bg-light" id="demo">
+            <div class="container">
+                <div class="text-left">
+                    <h2 class="section-heading text-uppercase">Demo</h2>
+                    <iframe width="720" height="400" style="display:block; margin:0 auto;" src="https://www.youtube.com/embed/pBqBArcXRto">
+                    </iframe>
+                    <p align='center'> 
+                        Synchrozied transciption result. Transcribed midi is playback by Disklavier. </br> SeungJin Cho: Chopin Scherzo in B flat minor Op. 31 
+                        <a href="https://www.youtube.com/watch?v=iliNPUB9GSA">[Original Source]</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!-- Summary -->
+        <section class="page-section bg-light" id="Summary">
+            <div class="container">
+                <div class="text-left">
+                    <h2 class="section-heading text-uppercase">Summary</h2>
+                    <div class="body">
+                        We explored neural-network architecture for piano transcription. 
+                        We focused that frame-by-frame prediction could be easier if the prior note states are known.
+                        To apply this, we explicitly informs the model by frame of the previous note state.
+                        We also examined various representation type to represent note states.
+                        <br>Our main contributions are as follows:
+                        <ul>
+                            <li>We proposed autoregressive transcription model, which is online, simple and general architecture. We showed that the model reflect sequential dependency and have similar perfomance capacity compare to SOTA models</li>
+                            <li>We showed that represent multiple note states with softmax and predict them with single network does not degrade the performance</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
         <!-- Motivation -->
         <section class="page-section bg-light" id="Motivation">
-            Motivation
+            <div class="container">
+                <div class="text-left">
+                    <h2 class="section-heading text-uppercase">Motivation</h2>
+                    <div class="body">
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- results -->
