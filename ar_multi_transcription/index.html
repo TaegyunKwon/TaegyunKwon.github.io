@@ -52,8 +52,9 @@
                 </div>
             </div>
         </header>
+    </body>
 
-
+    <body id="contents">
         <!-- Abstract -->
         <section class="page-section bg-light" id="Abstract">
             <div class="container">
@@ -81,6 +82,7 @@
                 </div>
             </div>
         </section>
+
         <!-- Summary -->
         <section class="page-section bg-light" id="Summary">
             <div class="container">
@@ -100,7 +102,6 @@
                 </div>
             </div>
         </section>
-        
 
         <!-- Motivation -->
         <section class="page-section bg-light" id="Motivation">
@@ -138,7 +139,7 @@
         </section>
 
         <!-- Methods -->
-        <section class="page-section" id="methods">
+        <section class="page-section bg-light" id="methods">
             <div class="container">
                 <div class="text-left">
                     <h2 class="section-heading text-uppercase">Methods</h2>
@@ -159,72 +160,89 @@
                     <h3 class="section-subheading ">Multi-State representation</h3>
                     <div class="lead">
                         We tested five kinds of note state representations. From binary to five states, we subdivide the classes into more classes.
-                        Especially, we added re-onset class, which is special case of onset while note is sustained.
+                        Especially, we added re-onset class, which is special case of onset while the note is sustained.
                         <figure class="figure">
                             <img src="assets/img/state_notation_v2_4-02.png" class="figure-img rouned mx-auto d-block" style="max-width: 70%; height: auto;">
-                            <figcaption class="figure-caption text-center"> Unrolled model diagram at frame t. x indicates acoustic feature (mel-spectrogram) and y indicates label</figcaption>
+                            <figcaption class="figure-caption text-center"> multi-state representations</figcaption>
                         </figure>
 
+                        Onsets and Frames[<a href="#ref1">1</a>] used two binary states and CNN-RNN stack for frame (note on) and onset, and   
+                        Kelz et al [<a href="#ref3">3</a>] used three branches to express three binary states (on, onset, offset).
+                        Compare to previous researches, we simplified network architecture by combining notes states into a single one-hot vector.
                         <figure class="figure">
                             <img src="assets/img/representation.PNG" class="figure-img rouned mx-auto d-block" style="max-width: 70%; height: auto;">
-                            <figcaption class="figure-caption text-center"> Unrolled model diagram at frame t. x indicates acoustic feature (mel-spectrogram) and y indicates label</figcaption>
+                            <figcaption class="figure-caption text-center"> abstact state representation comparision</figcaption>
                         </figure>
-
                     </div>
-                    <video height='400', controls>
-                        <source src="assets/mov/spectrogram_crop.mp4" alt='Your browser does not support the video tag.' type="video/mp4">
-                    </video> 
-                    <p align='center'>조성진 Scherzo 연주 일부의 스펙트로그램. Generated using <a href=https://musiclab.chromeexperiments.com/Spectrogram/> Chrome musiclab </a></p>
+                </div>
+            </div>
+        </section>
 
-                    <p align="left" style="font-size:20px;margin-top:30px;">
-                        우리가 듣는 모든 음악, 모든 소리는 공기의 떨림입니다. 빠르게 떨리는 소리는 높은소리, 느리게 떨리는 소리는 낮은 소리로 인식되며 
-                        스펙트로그램을 통해 소리의 주파수 별 성분을 보면, 어떤 소리가 나는지 대략적으로 알 수 있습니다.
-                        예를들어, 위에 있는 스펙트로그램을 보면 소리를 듣지 않아도 낮은 두번의 음들이 나오고, 조금씩 올라가는 높은 음들이 크게 나올 것이라는 것을 알 수 있습니다. 
-                    </p>    
+        <!-- Results -->
+        <section class="page-section bg-light" id="results">
+            <div class="container">
+                <div class="text-left">
+                    <h2 class="section-heading text-uppercase">Results</h2>
+                    <div class="lead">
+                    We evaluate our model with MAESTRO dataset.
+                    <br>
+                    First of all, our model produce much clearer posteriogram compare to non-AR algorithms. It shows that the auto-regressive connection
+                    helps the model to learn sequential dependency. However, our model also have drawbacks when it fails to capture offset; it tends to prolong notes too much.
+                    <figure class="figure">
+                        <img src="assets/img/frame_prob.PNG" class="figure-img rouned mx-auto d-block" style="max-width: 70%; height: auto;">
+                        <figcaption class="figure-caption text-center"> frame-probability comparision</figcaption>
+                    </figure>
+                    
 
-                    <p align="left" style="font-size:20px;margin-top:30px;">
-                        하지만 실제로 우리가 듣는 것들은 더 복잡합니다. 위 짧은 영상에서도 많은 음표가 울리고 있고,
-                        만약 숙련된 음악가라면 어떤음을 쳤는지, 얼마나 세게, 얼마나 짧게 쳤는지와 같은 것들을 들을 수 있을것입니다.
-                        위에서 연주된 정확한 음들을 피아노 건반을 따라 표시하면 아래와 같이 됩니다 (색깔은 세기를 나타냅니다)
-                    </p>    
+                    Comparison between AR and non-AR model shows it clearly affect note onset/offset predictions. Employing more note states also have positive effects,
+                    but the difference wasn't that large in note onset.
+                    <div class="row">
+                        <div class="col">
+                            <figure class="figure">
+                                <img src="assets/img/results_ar.png" class="figure-img rouned mx-auto d-block" style="max-width: 100%; height: auto;">
+                                <figcaption class="figure-caption text-center"> AR model comparison result</figcaption>
+                            </figure>
+                        </div>
+                        <div class="col">
+                        <figure class="figure">
+                            <img src="assets/img/results_states.png" class="figure-img rouned mx-auto d-block" style="max-width: 100%; height: auto;">
+                            <figcaption class="figure-caption text-center"> state representation comparision</figcaption>
+                        </figure>
+                        </div>
+                    </div>
 
-                    <img src="assets/img/piano_roll.png", height="400">
-                    <p align='center'>조성진 Scherzo 연주 일부의 피아노 롤</p>
-
-                    <p align="left" style="font-size:20px;margin-top:30px;">
-                        우리는 딥러닝을 이용해서 위의 스펙트로그램으로 부터 연주된 음표들을 구별해내는 알고리즘을 학습시켰습니다.
-                        연주된 음표의 음고, 세기, 길이를 정확히 예측한다면 이 피아노 롤을 다시 피아노를 통해 연주하면 원래 연주와 아주 유사한 연주를 재현 할 수 있게 됩니다.
-                        위의 데모들은, 이렇게 예측된 피아노 롤에 페달을 추가로 예측하여 자동연주 피아노를 통해 재현한 영상들 입니다.
-                        자세한 알고리즘은 아래의 논문을 참조해 주세요.
-                    </p>    
-
-                    <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">Future</h3>
-                    <p align="left" style="font-size:20px;margin-top:-50px;">
-                        연주 정보를 담은 피아노 롤은 연주를 재연하는 데 쓰이는 것 뿐 아니라 연주자가 구체적으로 어떻게 연주를 했는지
-                        분석할 수 있게 해줍니다. 연주 정보를 모아 좋은 연주를 구성하는 요소는 무엇인지, 연주의 스타일이란 어떻게
-                        구성되는지 실마리를 찾는 작업이 다음 단계이며, 궁극적으로는 음악 연주에서 발휘되는 인간의 창의성을 이해하고
-                        인간과 인공지능이 함께 연주할 수 있는 미래를 향하고 있습니다.
-                    </p>
-
-                    <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">Contact</h3>
-                    <p align="left" style="font-size:20px;margin-top:-50px;">
-                        권태균 ilcobo2@gmail.com
-                    </p>
-                    <h3 class="section-subheading" align="left" style="font-size:30px;margin-top:30px;">Acknowledgement</h3>
-                    <p align="left" style="font-size:20px;margin-top:-50px;">
-                        이 연구는 삼성전자 미래기술육성센터의 ICT 창의과제 지원을 받아 이루어졌습니다. (SRFC-IT1702-12)
-                    </p>
-
-                    <p align="left" style="font-size:20px;">
-                        과학적 출판에 인용하는 경우에는 ISMIR 2020에 출판될 "POLYPHONIC PIANO TRANSCRIPTION USING AUTOREGRESSIVEMULTI-STATE NOTE MODEL" 
-                        논문을 인용해주시면 감사하겠습니다. (링크 추가 예정)
-                    </p>
+                    Employing re-onset states also seems to have positive effect on retrieve repeated notes 
+                    <figure class="figure">
+                        <img src="assets/img/reonset.PNG" class="figure-img rouned mx-auto d-block" style="max-width: 70%; height: auto;">
+                        <figcaption class="figure-caption text-center"> detected onset activation. top: ground truth / middle: model with re-onset / bottom: model without reonset <figcaption>
+                    </figure>
+                    Our best model also achieved similar accuarcy compare to offline (bidirectional) onsets and frames model.
+                    We think that the auto-regressive connection compansates lack of backward information.
+                    <figure class="figure d-block">
+                        <img src="assets/img/results_onf.png" class="figure-img rouned mx-auto d-block" style="max-width: 70%; height: auto;">
+                        <figcaption class="figure-caption text-center"> reimplementation comparision</figcaption>
+                    </figure>
+                    We also tried beam-search decoding, but it even always degrades the decoded results. We found that the model is poorly calibrated, which means that predicted frame-probability is not reliable.
+                    <figure class="figure d-block">
+                        <img src="assets/img/ece_together_v2-02.png" class="figure-img rouned mx-auto d-block" style="max-width: 70%; height: auto;">
+                        <figcaption class="figure-caption text-center"> error calibration curve</figcaption>
+                    </figure>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Conclusion -->
+        <section class="page-section bg-light" id="Conclusion">
+            <div class="container">
+                <div class="text-left">
+                    <h2 class="section-heading text-uppercase">Conclusion</h2>
                 </div>
             </div>
         </section>
 
         <!-- Reference -->
-        <section class="page-section bg-light" id="Conclusion">
+        <section class="page-section bg-light" id="Reference">
             <div class="container">
                 <div class="text-left">
                     <h2 class="section-heading text-uppercase">Reference</h2>
@@ -255,12 +273,6 @@
                 </div>
             </div>
         </section>
-        
-        <!-- Conclusion -->
-        <section class="page-section bg-light" id="Conclusion">
-            Conclusion
-        </section>
-
         
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
