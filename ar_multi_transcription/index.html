@@ -24,8 +24,13 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars ml-1"></i></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#demo">Demo</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#results">Results</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Abstract">Abstract</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Demo">Demo</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Summary">Summary</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Motivation">Motivation</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Methods">Methods</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Results">Results</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#Reference">Referece</a></li>
                     </ul>
                 </div>
             </div>
@@ -42,6 +47,9 @@
                         <div class="masthead-subheading" style="font-size: 2.0rem; line-height: 2.0rem;">
                             <a> Taegyun Kwon, Dasaem Jeong and Juhan Nam</a>
                         </div>
+                        <a href="https://mac.kaist.ac.kr" target="_blank">
+                            <img src="assets/img/logo_final.png" class="img-fluid" style="height: 3.0rem;"></img>
+                        </a>
                         <div class="masthead-subheading" style="font-style:normal;">
                             <a> Graduate School of Culture Technology, KAIST, South Korea</a>
                         </div>
@@ -50,6 +58,7 @@
                         </div>
                     </div>
                 </div>
+                <a class="btn btn-primary btn-lx text-uppercase" href="https://arxiv.org/abs/2010.01104" target="_blank">Paper</a>
             </div>
         </header>
     </body>
@@ -68,7 +77,7 @@
         </section>
 
         <!-- Demo -->
-        <section class="page-section bg-light" id="demo">
+        <section class="page-section bg-light" id="Demo">
             <div class="container">
                 <div class="text-left">
                     <h2 class="section-heading text-uppercase">Demo</h2>
@@ -112,14 +121,14 @@
                         Most of NN based transciption algorithms are based on frame-by-frame model, which predict note activation at every frame.
                         <figure class="figure">
                             <img src="assets/img/frame_model.png" class="figure-img rouned mx-auto d-block" style="max-width: 70%; height: auto;">
-                            <figcaption class="figure-caption text-center">frame-by-frame prediction model</figcaption>
+                            <figcaption class="figure-caption text-center">Frame-by-frame prediction model</figcaption>
                         </figure>
                         However, when each frame prediction is independently predicted, resulting posteriogram often contains blurry region. 
                         <img src="assets/img/blurry.PNG" class="rouned mx-auto d-block" style="max-width: 70%; height: auto;"></img>
                         <figcaption class="figure-caption text-center">prediction example</figcaption>
                         
                         To overcome this problem, several methods were proposed, including post-processing with musical language model 
-                        [<a href="#ref3">3</a>, <a href="#ref5">5</a>] or GAN based regularization[<a href="#ref4">4</a>].
+                        [<a href="#ref2">2</a>, <a href="#ref4">4</a>] or GAN based regularization[<a href="#ref3">3</a>].
                         We thought that thoses blurry region indicates uncentainty, and the decision would be easier if the model take account the situation of notes just before.
                         For example, in the following clip it is hard to transcribe notes if you hear only middle part of notes, but it becomes much easier if you listen it from beginning and take account which notes were played.
                         <div class="embed-responsive embed-responsive-16by9 mx-auto d-block" style="max-width: 70%; height: auto;">
@@ -130,7 +139,7 @@
                         <br>
                         Also, we also had to decide representation of note states. Since it is critial to employing addtional note states [<a href="#ref1">1</a>],
                         we also tried to adapt additional states (onset, offset, <a href="#reonset">re-onset</a>). Previous works usually represent multiple note states with multi binary labels
-                        with branched network structure [<a href="#ref1">1</a>, <a href="#ref3">3</a>], but we tried to represent all states with a single softmax, since they can be
+                        with branched network structure [<a href="#ref1">1</a>, <a href="#ref2">2</a>], but we tried to represent all states with a single softmax, since they can be
                         regarded as mutually-exclusive, related class.
 
                     </div>
@@ -139,11 +148,11 @@
         </section>
 
         <!-- Methods -->
-        <section class="page-section bg-light" id="methods">
+        <section class="page-section bg-light" id="Methods">
             <div class="container">
                 <div class="text-left">
                     <h2 class="section-heading text-uppercase">Methods</h2>
-                    <h3 class="section-subheading ">Auto-regressive model</h3>
+                    <h3 class="section-subheading ">Auto-Regressive Model</h3>
                     <div class="lead">
                         Our proposed model follows stacked CNN-RNN architecture, similar to onsets and frames [<a href="#ref1">1</a>].
                         In our model, the previous note states are connatenated with CNN output, and feeded into RNN layers.
@@ -157,7 +166,7 @@
                         </figure>
 
                     </div>
-                    <h3 class="section-subheading ">Multi-State representation</h3>
+                    <h3 class="section-subheading ">Multi-State Representation</h3>
                     <div class="lead">
                         We tested five kinds of note state representations. From binary to five states, we subdivide the classes into more classes.
                         Especially, we added re-onset class, which is special case of onset while the note is sustained.
@@ -167,7 +176,7 @@
                         </figure>
 
                         Onsets and Frames[<a href="#ref1">1</a>] used two binary states and CNN-RNN stack for frame (note on) and onset, and   
-                        Kelz et al [<a href="#ref3">3</a>] used three branches to express three binary states (on, onset, offset).
+                        Kelz et al [<a href="#ref2">2</a>] used three branches to express three binary states (on, onset, offset).
                         Compare to previous researches, we simplified network architecture by combining notes states into a single one-hot vector.
                         <figure class="figure">
                             <img src="assets/img/representation.PNG" class="figure-img rouned mx-auto d-block" style="max-width: 70%; height: auto;">
@@ -179,7 +188,7 @@
         </section>
 
         <!-- Results -->
-        <section class="page-section bg-light" id="results">
+        <section class="page-section bg-light" id="Results">
             <div class="container">
                 <div class="text-left">
                     <h2 class="section-heading text-uppercase">Results</h2>
@@ -222,7 +231,8 @@
                         <img src="assets/img/results_onf.png" class="figure-img rouned mx-auto d-block" style="max-width: 70%; height: auto;">
                         <figcaption class="figure-caption text-center"> reimplementation comparision</figcaption>
                     </figure>
-                    We also tried beam-search decoding, but it even always degrades the decoded results. We found that the model is poorly calibrated, which means that predicted frame-probability is not reliable.
+                    We also tried beam-search decoding. Since high-dimensionality and multi-state of piano roll, it wasn't trivial to apply beam-search.
+                    We proposed truncated pitch-wise beam-search, which only take account high-probable states and ignoring other pitches at time (see 3.5 in the paper). But it even always degrades the decoded results. We found that the model is poorly calibrated, which means that predicted frame-probability is not reliable.
                     <figure class="figure d-block">
                         <img src="assets/img/ece_together_v2-02.png" class="figure-img rouned mx-auto d-block" style="max-width: 70%; height: auto;">
                         <figcaption class="figure-caption text-center"> error calibration curve</figcaption>
@@ -237,6 +247,19 @@
             <div class="container">
                 <div class="text-left">
                     <h2 class="section-heading text-uppercase">Conclusion</h2>
+                    <div class="lead">
+                        <ul>
+                            <li>
+                                The onset state  is  critical  to  improving  note  onset  scores and the offset and re-onset states help improving the note-with-offset score.
+                            </li>
+                            <li>
+                                The auto-regressive MLM provides significantly higher accuracy on both note onset and offset estimation compared to its non-autoregressive version.
+                            </li>
+                            <li>
+                                Our proposed model achieves transcription performance comparable to the state-of-the-art models evenwith the unidirectional RNN and fewer parameters.
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -253,23 +276,18 @@
                                 Jialin Song, Adam Roberts, Ian Simon, Colin Raffel, Jesse Engel, Sageev
                                 Oore, Douglas Eck. “Onsets and Frames: Dual-Objective Piano Transcription”, 19th International Society for Music Information Retrieval
                                 Conference, Paris, France, 2018.
-
                         </li>
                         <li id="ref2">
-                            [2] S. Böck and M. Schedl, “Polyphonic piano note transcription  with  recurrent  neural  networks,”  in Proc.of the 37th International Conference on Acoustics, Speech, and Signal Processing (ICASSP), March 2012,pp. 121–124
+                            [2] R. Kelz, S. Böck, and G. Widmer, “Deep polyphonic ADSR piano note transcription,” in Proc. of the 44th International Conference on Acoustics, Speech and Signal Processing (ICASSP).IEEE, May 2019, pp.246–250
                         </li>
                         <li id="ref3">
-                            [3] R. Kelz, S. Böck, and G. Widmer, “Deep polyphonic ADSR piano note transcription,” in Proc. of the 44th International Conference on Acoustics, Speech and Signal Processing (ICASSP).IEEE, May 2019, pp.246–250
+                            [3]  J. Kim and J. Bello, “Adversarial learning for improved onsets and frames music transcription,” in Proc. of 20th International Society for Music Information Retrieval Conference (ISMIR), 2019, pp. 670–677
                         </li>
                         <li id="ref4">
-                            [4]  J. Kim and J. Bello, “Adversarial learning for improved onsets and frames music transcription,” in Proc. of 20th International Society for Music Information Retrieval Conference (ISMIR), 2019, pp. 670–677
-                        </li>
-                        <li id="ref5">
-                            [5]  A.  Ycart,  A.  McLeod,  E.  Benetos,  and  K.  Yoshii, “Blending acoustic and language model predictions for automatic  music  transcription,”  in Proc. of the 20th International Society for Music Information Retrieval Conference (ISMIR), 2019, pp. 454–461
+                            [4]  A.  Ycart,  A.  McLeod,  E.  Benetos,  and  K.  Yoshii, “Blending acoustic and language model predictions for automatic  music  transcription,”  in Proc. of the 20th International Society for Music Information Retrieval Conference (ISMIR), 2019, pp. 454–461
                         </li>
                     </ul>
                 </div>
-
                 </div>
             </div>
         </section>
